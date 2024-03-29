@@ -7,7 +7,38 @@
     <body>
         <h1 style="text-align: center;">Eclipse Countdown</h1>
 
-        TODO
+        <form>
+            <div class="form-group">
+                <label for="pe_start">Start of Partial Eclipse:</label>
+                <input type="time" id="pe_start" name="pe_start">
+            </div>
+
+            <div class="form-group">
+                <label for="te_start">Start of Total Eclipse:</label>
+                <input type="time" id="te_start" name="te_start">
+            </div>
+
+            <div class="form-group">
+                <label for="te_end">End of Total Eclipse:</label>
+                <input type="time" id="te_end" name="te_end">
+            </div>
+
+            <div class="form-group">
+                <label for="pe_end">End of Partial Eclipse:</label>
+                <input type="time" id="pe_end" name="pe_end">
+            </div>
+
+            <div class="form-group">
+                <label for="padding">Safety Padding:</label>
+                <input type="number" id="padding" name="padding">
+            </div>
+
+            <div class="form-group form-group--centered">
+                <input type="reset" value="Clear">
+
+                <input type="submit" value="Start Countdown">
+            </div>
+        </form>
 
         <h2 style="text-align: center;">Resources</h2>
 
