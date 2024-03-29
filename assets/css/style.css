@@ -1,0 +1,146 @@
+body {
+    background-color: #030303;
+    color: #CCCCCC;
+}
+
+tool-heading {
+    text-align: center;
+}
+
+
+/* Form Stuff*/
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+  
+.form-group label {
+    margin-right: 10px;
+    text-align: left;
+    width: 100px;
+}
+  
+.form-group input {
+    background-color: #262626;
+    color: #CCCCCC;
+    flex-grow: 1;
+    flex-basis: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-group.form-group--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.form-group.form-group--centered input {
+    flex-grow: 0;
+    flex-basis: auto;
+    margin: 0 5px;
+}
+
+
+/* Table Stuff */
+.tables-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.table-wrapper {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    flex-basis: calc(50% - 20px);
+    min-width: 300px;
+    max-width: 500px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+th, td {
+    padding: 8px;
+}
+
+th {
+    background-color: #262626;
+    font-weight: bold;
+}
+  
+tbody tr:nth-child(even) {
+    background-color: #262626;
+}
+  
+caption {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/* Navigation Stuff */
+nav {
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+  
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav span, nav a {
+    color: #CCCCCC;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+}
+  
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #262626;
+    z-index: 1;
+}
+  
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+  
+.dropdown-menu li {
+    display: block;
+    margin: 0;
+}
+  
+.dropdown-menu li a {
+    padding: 10px;
+    display: block;
+}
+
+nav a:hover, nav span:hover {
+    background-color: #666666;
+}
