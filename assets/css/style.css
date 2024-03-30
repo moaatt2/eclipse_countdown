@@ -50,6 +50,40 @@ form {
 }
 
 
+/* Countdown Stuff */
+
+.countdown-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.countdown {
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+.countdown.label {
+    margin-right: 10px;
+    text-align: left;
+    width: 150px;
+}
+
+.countdown.timer {
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+.countdown.button {
+    background-color: #262626;
+    color: #CCCCCC;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    flex-basis: auto;
+    margin: 0 5px;
+}
+
+
 /* Table Stuff */
 .tables-wrapper {
     display: flex;

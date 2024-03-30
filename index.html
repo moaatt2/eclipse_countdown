@@ -7,7 +7,7 @@
     <body>
         <h1 style="text-align: center;">Eclipse Countdown</h1>
 
-        <form>
+        <form style="display: block">
             <div class="form-group">
                 <label for="pe_start">Start of Partial Eclipse:</label>
                 <input type="time" id="pe_start" name="pe_start">
@@ -39,6 +39,29 @@
                 <input type="submit" value="Start Countdown">
             </div>
         </form>
+
+        <div class="countdown-container" style="display: block">
+                <div class="form-group">
+                    <p class="countdown label">Start of Partial Eclipse:</p>
+                    <p class="countdown timer">1d 1h 1m 1.0s</p>
+                </div>
+                <div class="form-group">
+                    <p class="countdown label">Start of Total Eclipse:</p>
+                    <p class="countdown timer">1d 1h 1m 1.0s</p>
+                </div>
+                <div class="form-group">
+                    <p class="countdown label">End of Total Eclipse:</p>
+                    <p class="countdown timer">1d 1h 1m 1.0s</p>
+                </div>
+                <div class="form-group">
+                    <p class="countdown label">End of Partial Eclipse:</p>
+                    <p class="countdown timer">1d 1h 1m 1.0s</p>
+                </div>
+                
+                <div class="form-group form-group--centered">
+                    <button class="countdown button">Cancel Countdown</button>
+                </div>
+        </div>
 
         <h2 style="text-align: center;">Resources</h2>
 
