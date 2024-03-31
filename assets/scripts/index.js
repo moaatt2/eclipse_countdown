@@ -54,6 +54,10 @@ function start_countdowns() {
     countdown(te_start, te_start_timer, 1);
     countdown(te_end,   te_end_timer,   2);
     countdown(pe_end,   pe_end_timer,   3);
+
+    // Hide inputs and show timers
+    document.getElementById("time_form").style.display = 'none';
+    document.getElementById("countdown_div").style.display = 'block';
 }
 
 // Define Cancelation function
@@ -63,4 +67,8 @@ function cancel_countdowns() {
     clearInterval(intervals[1]);
     clearInterval(intervals[2]);
     clearInterval(intervals[3]);
+
+    // Hide timers and show inputs
+    document.getElementById("time_form").style.display = 'block';
+    document.getElementById("countdown_div").style.display = 'none';
 }
