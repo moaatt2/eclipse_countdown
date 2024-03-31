@@ -15,14 +15,18 @@ const te_start_timer = document.getElementById("te_start_timer");
 const te_end_timer   = document.getElementById("te_end_timer");
 const pe_end_timer   = document.getElementById("pe_end_timer");
 
+// Define interval
+let intervals = [0, 0, 0, 0];
+
 
 // Define a general countdown function
-function countdown(target, timer) {
+function countdown(target, timer, interval) {
     // Parse given time into target time
     let target_time = new Date(target.value).getTime();
     
     // Create a loop that runs every 100 miliseconds
-    let interval = setInterval(function() {
+    intervals[interval] = setInterval(function() {
+        console.log("Hello");
         // Get Current time and find number of miliseconds from now to target time
         let now = new Date().getTime();
         let distance = target_time - now;
@@ -36,7 +40,7 @@ function countdown(target, timer) {
         if (distance > 0) {
             timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
         } else {
-            clearInterval(interval)
+            clearInterval(intervals[interval])
             timer.innerHTML = "EXPIRED"
         }
     }, 100);
@@ -46,8 +50,17 @@ function countdown(target, timer) {
 // Define a function to start the timers
 function start_countdowns() {
     // Start timers
-    countdown(pe_start, pe_start_timer);
-    countdown(te_start, te_start_timer);
-    countdown(te_end,   te_end_timer);
-    countdown(pe_end,   pe_end_timer);
+    countdown(pe_start, pe_start_timer, 0);
+    countdown(te_start, te_start_timer, 1);
+    countdown(te_end,   te_end_timer,   2);
+    countdown(pe_end,   pe_end_timer,   3);
+}
+
+// Define Cancelation function
+function cancel_countdowns() {
+    // Cancel countdowns
+    clearInterval(intervals[0]);
+    clearInterval(intervals[1]);
+    clearInterval(intervals[2]);
+    clearInterval(intervals[3]);
 }
