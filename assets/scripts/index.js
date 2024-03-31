@@ -7,7 +7,9 @@ const te_end   = document.getElementById("te_end");
 const pe_end   = document.getElementById("pe_end");
 
 // Padding
-const padding  = document.getElementById("padding");
+const padding      = document.getElementById("padding").value;
+const te_start_pad = Number(padding) *  1000;
+const te_end_pad   = Number(padding) * -1000;
 
 //// Countdown Locations
 const pe_start_timer = document.getElementById("pe_start_timer");
@@ -20,9 +22,9 @@ let intervals = [0, 0, 0, 0];
 
 
 // Define a general countdown function
-function countdown(target, timer, interval) {
+function countdown(target, timer, interval, padding) {
     // Parse given time into target time
-    let target_time = new Date(target.value).getTime();
+    let target_time = new Date(target.value).getTime() + padding;
     
     // Create a loop that runs every 100 miliseconds
     intervals[interval] = setInterval(function() {
@@ -50,10 +52,10 @@ function countdown(target, timer, interval) {
 // Define a function to start the timers
 function start_countdowns() {
     // Start timers
-    countdown(pe_start, pe_start_timer, 0);
-    countdown(te_start, te_start_timer, 1);
-    countdown(te_end,   te_end_timer,   2);
-    countdown(pe_end,   pe_end_timer,   3);
+    countdown(pe_start, pe_start_timer, 0, 0);
+    countdown(te_start, te_start_timer, 1, te_start_pad);
+    countdown(te_end,   te_end_timer,   2, te_end_pad);
+    countdown(pe_end,   pe_end_timer,   3, 0);
 
     // Hide inputs and show timers
     document.getElementById("time_form").style.display = 'none';
