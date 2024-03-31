@@ -7,7 +7,7 @@
     <body>
         <h1 style="text-align: center;">Eclipse Countdown</h1>
 
-        <form style="display: block">
+        <form id="time_form" style="display: block">
             <div class="form-group">
                 <label for="pe_start">Start of Partial Eclipse:</label>
                 <input type="datetime-local" id="pe_start" name="pe_start" step="1">
@@ -39,7 +39,7 @@
             </div>
         </form>
 
-        <div class="countdown-container" style="display: block">
+        <div id="countdown_div" class="countdown-container" style="display: none">
                 <div class="form-group">
                     <p class="countdown label">Start of Partial Eclipse:</p>
                     <p class="countdown timer" id="pe_start_timer">1d 1h 1m 1.0s</p>
