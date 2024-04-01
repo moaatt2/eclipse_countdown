@@ -13,14 +13,21 @@ const te_start_timer = document.getElementById("te_start_timer");
 const te_end_timer   = document.getElementById("te_end_timer");
 const pe_end_timer   = document.getElementById("pe_end_timer");
 
+//// Audio files
+const pe_end_audio   = document.getElementById("pe_end_audio");   // 7616ms
+const pe_start_audio = document.getElementById("pe_start_audio"); // 7558ms
+const te_end_audio   = document.getElementById("te_end_audio");   // 7410ms
+const te_start_audio = document.getElementById("te_start_audio"); // 7488ms
+
 //// Define interval
 let intervals = [0, 0, 0, 0];
 
 
 // Define a general countdown function
-function countdown(target, timer, interval, padding_factor) {
+function countdown(target, timer, interval, padding_factor, audio, audio_length) {
     let target_time = new Date(target.value).getTime() + Number(padding.value)*padding_factor;
-    
+    let play_audio = true
+
     // Create a loop that runs every 100 miliseconds
     intervals[interval] = setInterval(function() {
         // Get Current time and find number of miliseconds from now to target time
@@ -35,6 +42,7 @@ function countdown(target, timer, interval, padding_factor) {
 
         if (distance > 0) {
             timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < audio_length && play_audio) {audio.play()}
         } else {
             clearInterval(intervals[interval])
             timer.innerHTML = "EXPIRED"
@@ -46,10 +54,10 @@ function countdown(target, timer, interval, padding_factor) {
 // Define a function to start the timers
 function start_countdowns() {
     // Start timers
-    countdown(pe_start, pe_start_timer, 0, 0);
-    countdown(te_start, te_start_timer, 1, 1000);
-    countdown(te_end,   te_end_timer,   2, -1000);
-    countdown(pe_end,   pe_end_timer,   3, 0);
+    countdown(pe_start, pe_start_timer, 0, 0,     pe_start_audio, 7616);
+    countdown(te_start, te_start_timer, 1, 1000,  te_start_audio, 7488);
+    countdown(te_end,   te_end_timer,   2, -1000, te_end_audio,   7410);
+    countdown(pe_end,   pe_end_timer,   3, 0,     pe_end_audio,   7616);
 
     // Hide inputs and show timers
     document.getElementById("time_form").style.display = 'none';
