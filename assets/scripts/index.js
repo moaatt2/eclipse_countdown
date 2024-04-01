@@ -25,7 +25,6 @@ function countdown(target, timer, interval, padding_factor) {
     
     // Create a loop that runs every 100 miliseconds
     intervals[interval] = setInterval(function() {
-        console.log("Hello");
         // Get Current time and find number of miliseconds from now to target time
         let now = new Date().getTime();
         let distance = target_time - now;
