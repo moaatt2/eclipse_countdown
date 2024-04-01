@@ -1,21 +1,19 @@
 // Set variables of interest
 
-//// User Defined times
+//// User defined times and padding
 const pe_start = document.getElementById("pe_start");
 const te_start = document.getElementById("te_start");
 const te_end   = document.getElementById("te_end");
 const pe_end   = document.getElementById("pe_end");
+const padding  = document.getElementById("padding");
 
-// Padding
-const padding = document.getElementById("padding");
-
-//// Countdown Locations
+//// Countdown locations
 const pe_start_timer = document.getElementById("pe_start_timer");
 const te_start_timer = document.getElementById("te_start_timer");
 const te_end_timer   = document.getElementById("te_end_timer");
 const pe_end_timer   = document.getElementById("pe_end_timer");
 
-// Define interval
+//// Define interval
 let intervals = [0, 0, 0, 0];
 
 
@@ -58,7 +56,7 @@ function start_countdowns() {
     document.getElementById("countdown_div").style.display = 'block';
 }
 
-// Define Cancelation function
+// Define cancelation function
 function cancel_countdowns() {
     // Cancel countdowns
     clearInterval(intervals[0]);
