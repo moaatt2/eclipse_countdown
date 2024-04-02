@@ -1,3 +1,14 @@
+//// Determine if website is on mobile or not
+let mobile = navigator.userAgent.toLowerCase().includes("mobile");
+
+//// If mobile hide desktop form else show mobile form
+if (mobile) {
+    document.getElementById("time_form").style.display = "none";
+} else {
+    document.getElementById("time_form_mobile").style.display = "none"
+}
+
+
 // Set variables of interest
 
 //// User defined times and padding
@@ -21,6 +32,8 @@ const te_start_audio = document.getElementById("te_start_audio"); // 7488ms
 
 //// Define interval
 let intervals = [0, 0, 0, 0];
+
+
 
 
 // Define a general countdown function
