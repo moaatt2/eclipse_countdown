@@ -7,6 +7,7 @@
     <body>
         <h1 style="text-align: center;">Eclipse Countdown</h1>
 
+        <!-- PC Countdown Form -->
         <form id="time_form" style="display: block">
             <div class="form-group">
                 <label for="pe_start">Start of Partial Eclipse:</label>
@@ -39,6 +40,39 @@
             </div>
         </form>
 
+        <!-- Mobile Countdown Form -->
+        <form id="time_form_mobile" style="display: block;">
+            <div class="form-group">
+                <label>Start of Partial Eclipse:</label>
+                <input class="mobile-inputs" id="pe_start_date" type="date">
+                <input class="mobile-inputs" id="pe_start_time" type="time" step="1">
+            </div>
+            <div class="form-group">
+                <label>Start of Total Eclipse:</label>
+                <input class="mobile-inputs" id="te_start_date" type="date">
+                <input class="mobile-inputs" id="te_start_time" type="time" step="1">
+            </div>
+            <div class="form-group">
+                <label>End of Total Eclipse:</label>
+                <input class="mobile-inputs" id="te_end_date" type="date">
+                <input class="mobile-inputs" id="te_end_time" type="time" step="1">
+            </div>
+            <div class="form-group">
+                <label>End of Partial Eclipse:</label>
+                <input class="mobile-inputs" id="pe_end_date" type="date">
+                <input class="mobile-inputs" id="pe_end_time" type="time" step="1">
+            </div>
+            <div class="form-group">
+                <label>Safety Padding:</label>
+                <input id="pe_start_date" type="number">
+            </div>
+            <div class="form-group form-group--centered">
+                <input type="reset" value="Clear">
+                <input type="button" value="Start Countdown" onclick="start_countdowns();">
+            </div>
+        </form>
+
+        <!-- Countdown Container -->
         <div id="countdown_div" class="countdown-container" style="display: none">
                 <div class="form-group">
                     <p class="countdown label">Start of Partial Eclipse:</p>
