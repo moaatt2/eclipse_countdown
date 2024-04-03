@@ -46,7 +46,17 @@ let intervals = [0, 0, 0, 0];
 
 
 // Define a general countdown function
-function countdown(target, timer, interval, audio, audio_length) {
+function countdown(datetime_target, date_target, time_target, timer, interval, padding_factor, audio, audio_length) {
+
+    // Define target time for mobile or 
+    let target;
+    if (mobile) {
+        let target_string = date_target.value + "T" + time_target.value;
+        target = new Date(target_string).getTime() + Number(padding_mobile.value) * padding_factor;
+    } else {
+        target = new Date(datetime_target.value).getTime() + Number(padding.value) * padding_factor;
+    }
+
     let play_audio = true
 
     // Create a loop that runs every 100 miliseconds
@@ -72,35 +82,13 @@ function countdown(target, timer, interval, audio, audio_length) {
 }
 
 
-// Define a function to create a timer with desktop form data
-function parse_desktop(target, timer, interval, padding_factor, audio, audio_length) {
-    let target_time = new Date(target.value).getTime() + Number(padding.value) * padding_factor;
-    countdown(target_time, timer, interval, audio, audio_length);
-}
-
-
-// Define a function to create a timer with mobile form data
-function parse_mobile(date_target, time_target, timer, interval, padding_factor, audio, audio_length) {
-    let target_string = date_target.value + "T" + time_target.value;
-    let target_time = new Date(target_string).getTime() + Number(padding_mobile.value) * padding_factor;
-    countdown(target_time, timer, interval, audio, audio_length);
-}
-
-
 // Define a function to start the timers
 function start_countdowns() {
     // Start timers
-    if (mobile) {
-        parse_mobile(pe_start_date, pe_start_time, pe_start_timer, 0, 0,     pe_start_audio, 7616);
-        parse_mobile(te_start_date, te_start_time, te_start_timer, 1, 1000,  te_start_audio, 7488);
-        parse_mobile(te_end_date,   te_end_time,   te_end_timer,   2, -1000, te_end_audio,   7410);
-        parse_mobile(pe_end_date,   pe_end_time,   pe_end_timer,   3, 0,     pe_end_audio,   7616);
-    } else {
-        parse_desktop(pe_start, pe_start_timer, 0, 0,     pe_start_audio, 7616);
-        parse_desktop(te_start, te_start_timer, 1, 1000,  te_start_audio, 7488);
-        parse_desktop(te_end,   te_end_timer,   2, -1000, te_end_audio,   7410);
-        parse_desktop(pe_end,   pe_end_timer,   3, 0,     pe_end_audio,   7616);
-    }
+    countdown(pe_start, pe_start_date, pe_start_time, pe_start_timer, 0, 0,     pe_start_audio, 7616);
+    countdown(te_start, te_start_date, te_start_time, te_start_timer, 1, 1000,  te_start_audio, 7488);
+    countdown(te_end,   te_end_date,   te_end_time,   te_end_timer,   2, -1000, te_end_audio,   7410);
+    countdown(pe_end,   pe_end_date,   pe_end_time,   pe_end_timer,   3, 0,     pe_end_audio,   7616);
 
     // Hide inputs and show timers
     document.getElementById("time_form").style.display = 'none';
