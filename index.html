@@ -4,34 +4,51 @@
         <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon">
         <link rel="stylesheet" href="assets/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     </head>
     <body>
+
         <h1 style="text-align: center;">Eclipse Countdown</h1>
 
         <!-- PC Countdown Form -->
         <form id="time_form" style="display: block">
             <div class="form-group">
-                <label for="pe_start">Start of Partial Eclipse:</label>
+                <label for="pe_start">
+                    <i class="fa-solid fa-circle-info" title="The time the partial eclipse starts. You will need to wear eclipse glasses or indirect methods to observe the sun at this point."></i>
+                    Start of Partial Eclipse:
+                </label>
                 <input type="datetime-local" id="pe_start" name="pe_start" step="1">
             </div>
 
             <div class="form-group">
-                <label for="te_start">Start of Total Eclipse:</label>
+                <label for="te_start">
+                    <i class="fa-solid fa-circle-info" title="The time the total eclipse starts. You can safely observe the sun without eclipse glasses at this time."></i>
+                    Start of Total Eclipse:
+                </label>
                 <input type="datetime-local" id="te_start" name="te_start", step="1">
             </div>
 
             <div class="form-group">
-                <label for="te_end">End of Total Eclipse:</label>
+                <label for="te_end">
+                    <i class="fa-solid fa-circle-info" title="The time the total eclipse ends. You will need to put your eclipse glasses back on."></i>
+                    End of Total Eclipse:
+                </label>
                 <input type="datetime-local" id="te_end" name="te_end", step="1">
             </div>
 
             <div class="form-group">
-                <label for="pe_end">End of Partial Eclipse:</label>
+                <label for="pe_end">
+                    <i class="fa-solid fa-circle-info" title="The time the final partial eclipse ends. The eclipse is over at this point, hopefully your view was good."></i>
+                    End of Partial Eclipse:
+                </label>
                 <input type="datetime-local" id="pe_end" name="pe_end" step="1">
             </div>
 
             <div class="form-group">
-                <label for="padding">Safety Padding:</label>
+                <label for="padding">
+                    <i class="fa-solid fa-circle-info" title="Add additional seconds after total eclipse and before end of total eclipse if you want to sacrifice total eclipse view time for additional safety."></i>
+                    Safety Padding:
+                </label>
                 <input type="number" id="padding" name="padding">
             </div>
 
