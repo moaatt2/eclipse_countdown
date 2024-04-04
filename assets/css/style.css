@@ -7,6 +7,12 @@ tool-heading {
     text-align: center;
 }
 
+/* Links */
+a:link    {color: #9A9A9A;}
+a:visited {color: #7C7C7C;}
+a:hover   {color: #BCBCBC;}
+a:active  {color: #8E8E8E;}
+
 
 /* Form Stuff*/
 form {
