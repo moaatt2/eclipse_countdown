@@ -60,44 +60,46 @@
 
         <!-- Mobile Countdown Form -->
         <form id="time_form_mobile" style="display: block;">
-            <div class="form-group">
+            <div class="grid-container">
+                <!-- Partial Eclipse Start Input -->
                 <label>
                     <i class="fa-solid fa-circle-info" data-tippy-content="The time the partial eclipse starts. You will need to wear eclipse glasses or indirect methods to observe the sun at this point."></i>
                     Start of Partial Eclipse:
                 </label>
-                <input class="mobile-inputs" id="pe_start_date" type="date">
-                <input class="mobile-inputs" id="pe_start_time" type="time" step="1">
-            </div>
-            <div class="form-group">
+                <input id="pe_start_date" type="date">
+                <input id="pe_start_time" type="time" step="1">
+                
+                <!-- Total Eclipse Start Input -->
                 <label>
                     <i class="fa-solid fa-circle-info" data-tippy-content="The time the total eclipse starts. You can safely observe the sun without eclipse glasses at this time."></i>
                     Start of Total Eclipse:
                 </label>
-                <input class="mobile-inputs" id="te_start_date" type="date">
-                <input class="mobile-inputs" id="te_start_time" type="time" step="1">
-            </div>
-            <div class="form-group">
+                <input id="te_start_date" type="date">
+                <input id="te_start_time" type="time" step="1">
+
+                <!-- Total Eclipse End Input -->
                 <label>
                     <i class="fa-solid fa-circle-info" data-tippy-content="The time the total eclipse ends. You will need to put your eclipse glasses back on."></i>
                     End of Total Eclipse:
                 </label>
-                <input class="mobile-inputs" id="te_end_date" type="date">
-                <input class="mobile-inputs" id="te_end_time" type="time" step="1">
-            </div>
-            <div class="form-group">
+                <input id="te_end_date" type="date">
+                <input id="te_end_time" type="time" step="1">
+
+                <!-- Partial Eclipse End Input -->
                 <label>
                     <i class="fa-solid fa-circle-info" data-tippy-content="The time the final partial eclipse ends. The eclipse is over at this point, hopefully your view was good."></i>
                     End of Partial Eclipse:
                 </label>
-                <input class="mobile-inputs" id="pe_end_date" type="date">
-                <input class="mobile-inputs" id="pe_end_time" type="time" step="1">
-            </div>
-            <div class="form-group">
+                <input id="pe_end_date" type="date">
+                <input id="pe_end_time" type="time" step="1">
+
+                <!-- Safety Padding Input -->
                 <label>
                     <i class="fa-solid fa-circle-info" data-tippy-content="Add additional seconds after total eclipse and before end of total eclipse if you want to sacrifice total eclipse view time for additional safety."></i>
                     Safety Padding:
                 </label>
-                <input class="mobile-inputs" id="padding_mobile" type="number">
+                <input class="num" id="padding_mobile" type="number">
+
             </div>
             <div class="form-group form-group--centered">
                 <input type="reset" value="Clear">
