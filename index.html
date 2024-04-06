@@ -14,7 +14,7 @@
         <form id="time_form" style="display: block">
             <div class="form-group">
                 <label for="pe_start">
-                    <i class="fa-solid fa-circle-info" title="The time the partial eclipse starts. You will need to wear eclipse glasses or indirect methods to observe the sun at this point."></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the partial eclipse starts. You will need to wear eclipse glasses or indirect methods to observe the sun at this point."></i>
                     Start of Partial Eclipse:
                 </label>
                 <input type="datetime-local" id="pe_start" name="pe_start" step="1">
@@ -22,7 +22,7 @@
 
             <div class="form-group">
                 <label for="te_start">
-                    <i class="fa-solid fa-circle-info" title="The time the total eclipse starts. You can safely observe the sun without eclipse glasses at this time."></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the total eclipse starts. You can safely observe the sun without eclipse glasses at this time."></i>
                     Start of Total Eclipse:
                 </label>
                 <input type="datetime-local" id="te_start" name="te_start", step="1">
@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 <label for="te_end">
-                    <i class="fa-solid fa-circle-info" title="The time the total eclipse ends. You will need to put your eclipse glasses back on."></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the total eclipse ends. You will need to put your eclipse glasses back on."></i>
                     End of Total Eclipse:
                 </label>
                 <input type="datetime-local" id="te_end" name="te_end", step="1">
@@ -38,7 +38,7 @@
 
             <div class="form-group">
                 <label for="pe_end">
-                    <i class="fa-solid fa-circle-info" title="The time the final partial eclipse ends. The eclipse is over at this point, hopefully your view was good."></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the final partial eclipse ends. The eclipse is over at this point, hopefully your view was good."></i>
                     End of Partial Eclipse:
                 </label>
                 <input type="datetime-local" id="pe_end" name="pe_end" step="1">
@@ -46,7 +46,7 @@
 
             <div class="form-group">
                 <label for="padding">
-                    <i class="fa-solid fa-circle-info" title="Add additional seconds after total eclipse and before end of total eclipse if you want to sacrifice total eclipse view time for additional safety."></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="Add additional seconds after total eclipse and before end of total eclipse if you want to sacrifice total eclipse view time for additional safety."></i>
                     Safety Padding:
                 </label>
                 <input type="number" id="padding" name="padding">
@@ -62,7 +62,7 @@
         <form id="time_form_mobile" style="display: block;">
             <div class="form-group">
                 <label>
-                    <i class="fa-solid fa-circle-info" id="pe_start_tooltip"></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the partial eclipse starts. You will need to wear eclipse glasses or indirect methods to observe the sun at this point."></i>
                     Start of Partial Eclipse:
                 </label>
                 <input class="mobile-inputs" id="pe_start_date" type="date">
@@ -70,7 +70,7 @@
             </div>
             <div class="form-group">
                 <label>
-                    <i class="fa-solid fa-circle-info" id="te_start_tooltip"></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the total eclipse starts. You can safely observe the sun without eclipse glasses at this time."></i>
                     Start of Total Eclipse:
                 </label>
                 <input class="mobile-inputs" id="te_start_date" type="date">
@@ -78,7 +78,7 @@
             </div>
             <div class="form-group">
                 <label>
-                    <i class="fa-solid fa-circle-info" id="te_end_tooltip"></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the total eclipse ends. You will need to put your eclipse glasses back on."></i>
                     End of Total Eclipse:
                 </label>
                 <input class="mobile-inputs" id="te_end_date" type="date">
@@ -86,7 +86,7 @@
             </div>
             <div class="form-group">
                 <label>
-                    <i class="fa-solid fa-circle-info" id="pe_end_tooltip"></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="The time the final partial eclipse ends. The eclipse is over at this point, hopefully your view was good."></i>
                     End of Partial Eclipse:
                 </label>
                 <input class="mobile-inputs" id="pe_end_date" type="date">
@@ -94,7 +94,7 @@
             </div>
             <div class="form-group">
                 <label>
-                    <i class="fa-solid fa-circle-info" id="padding_tooltip"></i>
+                    <i class="fa-solid fa-circle-info" data-tippy-content="Add additional seconds after total eclipse and before end of total eclipse if you want to sacrifice total eclipse view time for additional safety."></i>
                     Safety Padding:
                 </label>
                 <input class="mobile-inputs" id="padding_mobile" type="number">
@@ -166,13 +166,7 @@
         <script src="https://unpkg.com/tippy.js@6"></script>
 
         <!-- Tooltip Scripts -->
-        <script>
-            tippy('#pe_start_tooltip', {content: 'The time the partial eclipse starts. You will need to wear eclipse glasses or indirect methods to observe the sun at this point.'});
-            tippy('#te_start_tooltip', {content: 'The time the total eclipse starts. You can safely observe the sun without eclipse glasses at this time.'});
-            tippy('#te_end_tooltip',   {content: 'The time the total eclipse ends. You will need to put your eclipse glasses back on.'});
-            tippy('#pe_end_tooltip',   {content: 'The time the final partial eclipse ends. The eclipse is over at this point, hopefully your view was good.'});
-            tippy('#padding_tooltip',  {content: 'Add additional seconds after total eclipse and before end of total eclipse if you want to sacrifice total eclipse view time for additional safety.'});
-        </script>
+        <script>tippy('[data-tippy-content]');</script>
 
     </body>
 </html>
