@@ -33,7 +33,7 @@ form {
     width: 170px;
 }
   
-.form-group input {
+form input {
     background-color: #262626;
     color: #CCCCCC;
     flex-grow: 1;
@@ -58,6 +58,30 @@ form {
 .mobile-inputs {
     margin-left: 5px;
     margin-right: 5px;
+}
+
+/* Grid Mobile Form */
+.grid-container {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    padding: 10px;
+    gap: 10px;
+}
+
+.grid-container > div {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.grid-container > .num {
+    grid-column: span 2;
+}
+
+.grid-container input {
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* Countdown Stuff */
