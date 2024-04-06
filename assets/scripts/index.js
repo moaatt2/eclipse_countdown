@@ -73,7 +73,10 @@ function countdown(datetime_target, date_target, time_target, timer, interval, p
 
         if (distance > 0) {
             timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            if (distance < audio_length && play_audio) {audio.play()}
+            if (distance < audio_length && play_audio) {
+                audio.play();
+                play_audio = false;
+            }
         } else {
             clearInterval(intervals[interval])
             timer.innerHTML = "EXPIRED"
