@@ -36,17 +36,17 @@ const te_end_timer   = document.getElementById("te_end_timer");
 const pe_end_timer   = document.getElementById("pe_end_timer");
 
 //// Audio files
-const pe_end_audio   = document.getElementById("pe_end_audio");   // 7616ms
-const pe_start_audio = document.getElementById("pe_start_audio"); // 7558ms
-const te_end_audio   = document.getElementById("te_end_audio");   // 7410ms
-const te_start_audio = document.getElementById("te_start_audio"); // 7488ms
+const pe_end_audio   = document.getElementById("pe_end_audio");
+const pe_start_audio = document.getElementById("pe_start_audio");
+const te_end_audio   = document.getElementById("te_end_audio");
+const te_start_audio = document.getElementById("te_start_audio");
 
 //// Define interval
 let intervals = [0, 0, 0, 0];
 
 
 // Define a general countdown function
-function countdown(datetime_target, date_target, time_target, timer, interval, padding_factor, audio, audio_length) {
+function countdown(datetime_target, date_target, time_target, timer, interval, padding_factor, audio) {
 
     // Define target time for mobile or 
     let target;
@@ -73,7 +73,7 @@ function countdown(datetime_target, date_target, time_target, timer, interval, p
 
         if (distance > 0) {
             timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            if (distance < audio_length && play_audio) {
+            if ((distance < audio.duration * 1000) && play_audio) {
                 audio.play();
                 play_audio = false;
             }
@@ -88,10 +88,10 @@ function countdown(datetime_target, date_target, time_target, timer, interval, p
 // Define a function to start the timers
 function start_countdowns() {
     // Start timers
-    countdown(pe_start, pe_start_date, pe_start_time, pe_start_timer, 0, 0,     pe_start_audio, 7616);
-    countdown(te_start, te_start_date, te_start_time, te_start_timer, 1, 1000,  te_start_audio, 7488);
-    countdown(te_end,   te_end_date,   te_end_time,   te_end_timer,   2, -1000, te_end_audio,   7410);
-    countdown(pe_end,   pe_end_date,   pe_end_time,   pe_end_timer,   3, 0,     pe_end_audio,   7616);
+    countdown(pe_start, pe_start_date, pe_start_time, pe_start_timer, 0, 0,     pe_start_audio);
+    countdown(te_start, te_start_date, te_start_time, te_start_timer, 1, 1000,  te_start_audio);
+    countdown(te_end,   te_end_date,   te_end_time,   te_end_timer,   2, -1000, te_end_audio);
+    countdown(pe_end,   pe_end_date,   pe_end_time,   pe_end_timer,   3, 0,     pe_end_audio);
 
     // Hide inputs and show timers
     document.getElementById("time_form").style.display = 'none';
